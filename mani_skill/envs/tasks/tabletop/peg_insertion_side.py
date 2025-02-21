@@ -64,14 +64,14 @@ class PegInsertionSideEnv(BaseEnv):
     """
 
     _sample_video_link = "https://github.com/haosulab/ManiSkill/raw/main/figures/environment_demos/PegInsertionSide-v1_rt.mp4"
-    SUPPORTED_ROBOTS = ["panda_wristcam"]
-    agent: Union[PandaWristCam]
+    SUPPORTED_ROBOTS = ["panda"]
+    # agent: Union[PandaWristCam]
     _clearance = 0.003
 
     def __init__(
         self,
         *args,
-        robot_uids="panda_wristcam",
+        robot_uids="panda",
         num_envs=1,
         reconfiguration_freq=None,
         **kwargs,
@@ -95,8 +95,8 @@ class PegInsertionSideEnv(BaseEnv):
 
     @property
     def _default_sensor_configs(self):
-        pose = sapien_utils.look_at([0, -0.3, 0.2], [0, 0, 0.1])
-        return [CameraConfig("base_camera", pose, 128, 128, np.pi / 2, 0.01, 100)]
+        pose = sapien_utils.look_at([0.5, -0.5, 0.8], [0.05, -0.1, 0.4])
+        return [CameraConfig("base_camera", pose, 224, 224, 1, 0.01, 100)]
 
     @property
     def _default_human_render_camera_configs(self):
