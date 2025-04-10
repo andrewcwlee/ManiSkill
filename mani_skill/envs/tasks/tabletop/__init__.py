@@ -20,3 +20,7 @@ from .pull_cube_tool import PullCubeToolEnv
 
 
 from .push_cube_224 import PushCube224Env
+
+
+# for HybridRI
+from .pick_cube_hybridri import PickCubeHybridRIEnv
